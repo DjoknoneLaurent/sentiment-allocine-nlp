@@ -1,0 +1,95 @@
+# ======================
+# PYTHON
+# ======================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ======================
+# ENVIRONNEMENTS
+# ======================
+.venv/
+venv/
+env/
+.env
+!.env.example
+
+# ======================
+# CONFIG SENSIBLE
+# ======================
+config/secrets.yaml
+config/*.env
+
+# ======================
+# DATA (ML BEST PRACTICE)
+# ======================
+data/raw/
+data/processed/
+data/external/
+
+# ======================
+# MODELS
+# ======================
+models/
+*.bin
+*.pt
+*.safetensors
+*.h5
+*.ckpt
+*.onnx
+
+# ======================
+# MLFLOW
+# ======================
+mlruns/
+
+# ======================
+# JUPYTER
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# TESTS & COVERAGE
+# ======================
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ======================
+# IDE
+# ======================
+.vscode/
+.idea/
+*.sublime-*
+
+# ======================
+# OS
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# LOGS
+# ======================
+logs/
+*.log
+
+# ML models
+*.pkl
+*.joblib
+*.pt
+*.bin
+models/production/*
+models/transformers/*
+
+# Docker
+docker-compose.override.yml
+
+# Secrets
+.env
+
