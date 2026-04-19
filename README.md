@@ -31,7 +31,7 @@ cat > README.md << 'READMEEOF'
 
 </div>
 
----
+--- 
 
 ## Vue d'ensemble
 
