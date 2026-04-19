@@ -172,16 +172,4 @@ python src/data/preprocess.py          # Génère data/processed/
 - **Monitoring** : tracker la distribution des prédictions en production pour détecter le drift
 
 ---
-
-<div align="center">
-Projet réalisé dans le cadre d'un cursus Data Science / NLP — 2025
-</div>
-READMEEOF
-
-# Remplacer les placeholders par les vraies URLs
-sed -i "s|APP_URL_PLACEHOLDER|${APP_URL}|g" README.md
-sed -i "s|GITHUB_URL_PLACEHOLDER|${GITHUB_URL}|g" README.md
-
-echo "✅ README.md généré"
-wc -l README.md
-](https://github.com/DjoknoneLaurent/sentiment-allocine-nlp)
+(https://github.com/DjoknoneLaurent/sentiment-allocine-nlp)
