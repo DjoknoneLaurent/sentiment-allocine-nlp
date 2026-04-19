@@ -1,0 +1,63 @@
+{
+  "LogReg": {
+    "optuna_best_params": {
+      "max_features": 100000,
+      "ngram_max": 2,
+      "min_df": 4,
+      "max_df": 0.8671638649627287,
+      "C": 5.286516485491993,
+      "solver": "saga"
+    },
+    "optuna_best_f1_cv": 0.939633,
+    "threshold": 0.541859,
+    "test_metrics": {
+      "threshold": 0.541859,
+      "accuracy": 0.9439,
+      "f1": 0.9413,
+      "precision": 0.9454,
+      "recall": 0.9371,
+      "roc_auc": 0.9873,
+      "optuna_f1_cv": 0.9396
+    }
+  },
+  "LinearSVC": {
+    "optuna_best_params": {
+      "max_features": 100000,
+      "ngram_max": 2,
+      "min_df": 4,
+      "max_df": 0.9641147350191699,
+      "C": 0.33333757386947294
+    },
+    "optuna_best_f1_cv": 0.940253,
+    "threshold": 0.463065,
+    "test_metrics": {
+      "threshold": 0.463065,
+      "accuracy": 0.9444,
+      "f1": 0.9424,
+      "precision": 0.9359,
+      "recall": 0.949,
+      "roc_auc": 0.9874,
+      "optuna_f1_cv": 0.9403
+    }
+  },
+  "NaiveBayes": {
+    "optuna_best_params": {
+      "max_features": 150000,
+      "ngram_max": 2,
+      "min_df": 2,
+      "max_df": 0.8700365785276855,
+      "alpha": 1.196203430390388
+    },
+    "optuna_best_f1_cv": 0.921218,
+    "threshold": 0.438442,
+    "test_metrics": {
+      "threshold": 0.438442,
+      "accuracy": 0.9247,
+      "f1": 0.9226,
+      "precision": 0.91,
+      "recall": 0.9356,
+      "roc_auc": 0.9777,
+      "optuna_f1_cv": 0.9212
+    }
+  }
+}

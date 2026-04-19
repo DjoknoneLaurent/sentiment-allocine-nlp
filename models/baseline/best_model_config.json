@@ -1,0 +1,24 @@
+{
+  "selected_model": "LinearSVC",
+  "selection_criterion": "F1-score (test set)",
+  "version": "1.0.0",
+  "threshold": 0.463065,
+  "optuna_params": {
+    "max_features": 100000,
+    "ngram_max": 2,
+    "min_df": 4,
+    "max_df": 0.9641147350191699,
+    "C": 0.33333757386947294
+  },
+  "optuna_f1_cv": 0.940253,
+  "test_metrics": {
+    "threshold": 0.463065,
+    "accuracy": 0.9444,
+    "f1": 0.9424,
+    "precision": 0.9359,
+    "recall": 0.949,
+    "roc_auc": 0.9874,
+    "optuna_f1_cv": 0.9403
+  },
+  "seed": 42
+}

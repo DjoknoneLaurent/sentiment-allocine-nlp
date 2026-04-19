@@ -1,0 +1,38 @@
+{
+  "camembert-base": {
+    "short_name": "CamemBERT-base",
+    "hf_name": "camembert-base",
+    "model_dir": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base",
+    "threshold": 0.27876,
+    "metrics": {
+      "f1": 0.9407,
+      "accuracy": 0.9419,
+      "precision": 0.9215,
+      "recall": 0.9607,
+      "roc_auc": 0.9857,
+      "threshold": 0.27876,
+      "train_time_s": 12372.6,
+      "global_step": 1000,
+      "training_loss": 0.324,
+      "n_params_total": 110623490,
+      "n_params_trainable": 35440128,
+      "sampling": {
+        "train_ratio": 0.1,
+        "val_ratio": 0.25,
+        "n_train": 16000,
+        "n_val": 5000,
+        "n_test": 20000,
+        "max_length": 128,
+        "layer_freeze": "120/201"
+      }
+    },
+    "artifacts": {
+      "y_pred": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/y_pred.npy",
+      "y_proba": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/y_proba.npy",
+      "y_true": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/y_true.npy",
+      "config": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/config.json",
+      "threshold": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/threshold.json",
+      "threshold_analysis": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base/threshold_analysis.parquet"
+    }
+  }
+}

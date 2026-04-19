@@ -1,0 +1,9 @@
+{
+  "total_train": 160000,
+  "balance_ratio": 0.5037,
+  "median_chars_neg": 371,
+  "median_chars_pos": 408,
+  "median_words_neg": 64,
+  "median_words_pos": 69,
+  "pct_95_words": 254
+}

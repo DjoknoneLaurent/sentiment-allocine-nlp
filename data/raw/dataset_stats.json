@@ -1,0 +1,20 @@
+{
+  "train": {
+    "n_samples": 160000,
+    "n_positive": 80587,
+    "n_negative": 79413,
+    "balance_ratio": 0.5037
+  },
+  "validation": {
+    "n_samples": 20000,
+    "n_positive": 9796,
+    "n_negative": 10204,
+    "balance_ratio": 0.4898
+  },
+  "test": {
+    "n_samples": 20000,
+    "n_positive": 9592,
+    "n_negative": 10408,
+    "balance_ratio": 0.4796
+  }
+}

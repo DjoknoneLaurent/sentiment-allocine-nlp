@@ -1,0 +1,58 @@
+{
+  "experiment": "baseline",
+  "dataset": "allocine",
+  "val_results": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.9429,
+      "precision": 0.9364,
+      "recall": 0.9479,
+      "f1_score": 0.9421,
+      "auc_roc": 0.9861,
+      "train_time_s": 50.09,
+      "vocab_size": 100000
+    },
+    {
+      "model": "LinearSVC",
+      "accuracy": 0.9347,
+      "precision": 0.9256,
+      "recall": 0.9424,
+      "f1_score": 0.9339,
+      "auc_roc": 0.9822,
+      "train_time_s": 102.23,
+      "vocab_size": 100000
+    },
+    {
+      "model": "ComplementNB",
+      "accuracy": 0.9259,
+      "precision": 0.9236,
+      "recall": 0.9253,
+      "f1_score": 0.9244,
+      "auc_roc": 0.9767,
+      "train_time_s": 44.61,
+      "vocab_size": 100000
+    }
+  ],
+  "test_results": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.9442,
+      "f1_score": 0.9419,
+      "auc_roc": 0.9874
+    },
+    {
+      "model": "LinearSVC",
+      "accuracy": 0.9364,
+      "f1_score": 0.9341,
+      "auc_roc": 0.983
+    },
+    {
+      "model": "ComplementNB",
+      "accuracy": 0.9257,
+      "f1_score": 0.9226,
+      "auc_roc": 0.978
+    }
+  ],
+  "best_model": "LogisticRegression",
+  "best_f1_val": 0.9421
+}

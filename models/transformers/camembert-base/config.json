@@ -1,0 +1,54 @@
+{
+  "model_key": "camembert-base",
+  "short_name": "CamemBERT-base",
+  "hf_name": "camembert-base",
+  "threshold": 0.27876,
+  "max_length": 128,
+  "metrics": {
+    "f1": 0.9407,
+    "accuracy": 0.9419,
+    "precision": 0.9215,
+    "recall": 0.9607,
+    "roc_auc": 0.9857,
+    "threshold": 0.27876,
+    "train_time_s": 12372.6,
+    "global_step": 1000,
+    "training_loss": 0.324,
+    "n_params_total": 110623490,
+    "n_params_trainable": 35440128,
+    "sampling": {
+      "train_ratio": 0.1,
+      "val_ratio": 0.25,
+      "n_train": 16000,
+      "n_val": 5000,
+      "n_test": 20000,
+      "max_length": 128,
+      "layer_freeze": "120/201"
+    }
+  },
+  "train_history": [
+    {
+      "eval_loss": 0.2465,
+      "eval_f1": 0.9443,
+      "eval_accuracy": 0.9446,
+      "eval_precision": 0.931,
+      "eval_recall": 0.9579,
+      "eval_roc_auc": 0.9859,
+      "eval_runtime": 1254.4526,
+      "eval_samples_per_second": 3.986,
+      "eval_steps_per_second": 0.125,
+      "epoch": 1.0,
+      "step": 1000
+    }
+  ],
+  "cpu_optimized": true,
+  "layer_freeze": "120/201",
+  "training_args": {
+    "num_epochs": 1,
+    "batch_size": 16,
+    "learning_rate": 3e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "seed": 42
+  }
+}

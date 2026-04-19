@@ -1,95 +1,116 @@
-# ======================
-# PYTHON
-# ======================
+# ══════════════════════════════════════════════════════════════
+#  .gitignore — Projet NLP Sentiment Allociné
+#  Règle : si c'est lourd, régénérable ou sensible → exclu
+# ══════════════════════════════════════════════════════════════
+
+# ── Python ────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
-*.so
+*.pyo
+*.pyd
 *.egg-info/
 dist/
 build/
 .eggs/
+*.egg
 
-# ======================
-# ENVIRONNEMENTS
-# ======================
+# ── Environnements virtuels ───────────────────────────────────
 .venv/
 venv/
 env/
+ENV/
+.conda/
+
+# ── Variables d'environnement (JAMAIS sur GitHub) ─────────────
 .env
+.env.*
 !.env.example
 
-# ======================
-# CONFIG SENSIBLE
-# ======================
-config/secrets.yaml
-config/*.env
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+notebooks/.jupyter/
+Untitled.ipynb
+*.ipynb_checkpoints
 
-# ======================
-# DATA (ML BEST PRACTICE)
-# ======================
-data/raw/
-data/processed/
-data/external/
+# ── Données brutes et traitées (régénérables) ─────────────────
+data/raw/*.parquet
+data/raw/*.csv
+data/processed/*.parquet
+data/processed/*.pkl
+data/processed/*.parquet
+# On garde uniquement les stats légères
+!data/raw/dataset_stats.json
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
 
-# ======================
-# MODELS
-# ======================
-models/
-*.bin
-*.pt
-*.safetensors
-*.h5
-*.ckpt
-*.onnx
-
-# ======================
-# MLFLOW
-# ======================
+# ── Modèles : poids lourds (exclus de Git) ────────────────────
+# Tous les poids PyTorch et sérialisations lourdes
+models/transformers/**/*.safetensors
+models/transformers/**/*.bin
+models/transformers/**/*.pt
+models/transformers/**/*.ot
+# Tous les checkpoints d'entraînement (transitoires)
+models/checkpoints/
+# Poids baseline (chargés via HuggingFace Spaces ou stockage externe)
+models/baseline/*.joblib
+models/baseline/*.pkl
+models/model.joblib
+# MLflow artifacts (poids dupliqués)
 mlruns/
 
-# ======================
-# JUPYTER
-# ======================
-.ipynb_checkpoints/
+# ON GARDE les fichiers de config légers (nécessaires au déploiement)
+!models/baseline/best_model_config.json
+!models/transformers/**/config.json
+!models/transformers/**/threshold.json
+!models/transformers/**/tokenizer_config.json
+!models/transformers/**/tokenizer.json
+!models/transformers/**/threshold_analysis.parquet
+!models/transformers/transformer_registry.json
+!models/transformers/.gitkeep
+!models/baseline/.gitkeep
+!models/production/.gitkeep
 
-# ======================
-# TESTS & COVERAGE
-# ======================
+# Arrays numpy de prédictions (régénérables depuis les modèles)
+models/transformers/**/*.npy
+reports/metrics/error_analysis.parquet
+
+# ── MLflow (logs d'expériences, pas du code) ──────────────────
+mlruns/
+
+# ── Logs ──────────────────────────────────────────────────────
+logs/
+notebooks/logs/
+*.log
+
+# ── Tests et coverage ────────────────────────────────────────
 .pytest_cache/
 htmlcov/
 .coverage
 coverage.xml
 
-# ======================
-# IDE
-# ======================
+# ── IDE ──────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.sublime-*
+*.swp
+*.swo
 
-# ======================
-# OS
-# ======================
+# ── OS ───────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# ======================
-# LOGS
-# ======================
-logs/
-*.log
+# ── Streamlit secrets (ne jamais versionner) ─────────────────
+.streamlit/secrets.toml
 
-# ML models
-*.pkl
-*.joblib
-*.pt
-*.bin
-models/production/*
-models/transformers/*
-
-# Docker
-docker-compose.override.yml
-
-# Secrets
-.env
-
+# ── Modèles baseline : exclure les lourds, garder le léger ───
+models/baseline/best_model.joblib
+models/baseline/model_linearsvc.joblib
+models/baseline/model_logreg.joblib
+models/baseline/model_naivebayes.joblib
+models/baseline/ComplementNB.joblib
+models/baseline/LogisticRegression.joblib
+# On garde uniquement LinearSVC.joblib (6.6Mo — dans les limites GitHub)
+!models/baseline/LinearSVC.joblib

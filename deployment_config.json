@@ -1,0 +1,98 @@
+{
+  "project": {
+    "name": "sentiment-allocine",
+    "version": "1.0.0",
+    "created_at": "2026-04-19T04:40:46.633774",
+    "description": "Classification binaire de sentiment (FR) — Allociné",
+    "dataset": "Allociné (HuggingFace)",
+    "test_set_size": 20000
+  },
+  "strategy": {
+    "description": "Déploiement multi-modèles : principal + fallback + premium. Le modèle principal est activé par défaut. Le fallback s'active si latence > 200ms ou erreur. Le premium est disponible sur demande explicite.",
+    "routing": {
+      "default": "main",
+      "on_error": "fallback",
+      "premium": "on_request"
+    }
+  },
+  "models": {
+    "main": {
+      "name": "LinearSVC",
+      "type": "baseline",
+      "hf_name": "",
+      "threshold": 0.463065,
+      "metrics": {
+        "f1": 0.9424,
+        "accuracy": 0.9444,
+        "roc_auc": 0.9874,
+        "business_cost": 4078
+      },
+      "artifacts": {
+        "model_dir": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/baseline/best_model.joblib",
+        "threshold": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/metrics/all_models_config.json",
+        "config": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/metrics/best_model_config.json",
+        "joblib": "models/baseline/LinearSVC.joblib"
+      },
+      "inference": {
+        "max_length": 128,
+        "device": "cpu",
+        "batch_size": 32
+      }
+    },
+    "fallback": {
+      "name": "LinearSVC",
+      "type": "baseline",
+      "threshold": 0.463065,
+      "metrics": {
+        "f1": 0.9424,
+        "accuracy": 0.9444,
+        "roc_auc": 0.9874
+      },
+      "artifacts": {
+        "joblib": "models/baseline/LinearSVC.joblib",
+        "config": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/metrics/best_model_config.json"
+      },
+      "inference": {
+        "device": "cpu",
+        "latency_ms": "<5"
+      }
+    },
+    "premium": {
+      "name": "CamemBERT-base",
+      "type": "transformer",
+      "hf_name": "camembert-base",
+      "threshold": 0.2788,
+      "metrics": {
+        "f1": 0.9407,
+        "accuracy": 0.9419,
+        "roc_auc": 0.9857
+      },
+      "artifacts": {
+        "model_dir": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/camembert-base"
+      },
+      "inference": {
+        "max_length": 128,
+        "device": "cpu",
+        "note": "Charger à la demande — lourd en mémoire (500 Mo)"
+      }
+    }
+  },
+  "business_rules": {
+    "cost_function": "3 × FN + 1 × FP",
+    "fn_weight": 3.0,
+    "fp_weight": 1.0,
+    "threshold_strategy": "Optimisation sur validation uniquement (pas de leakage)",
+    "labels": {
+      "0": "négatif",
+      "1": "positif"
+    }
+  },
+  "mlops": {
+    "seed": 42,
+    "reproducibility": "Tous les artefacts incluent config.json avec seed et hyperparamètres",
+    "benchmark_path": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/metrics/benchmark_final.csv",
+    "figures_path": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/figures",
+    "registry_baseline": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/reports/metrics/all_models_config.json",
+    "registry_transformer": "/home/djoknone/Bureau/MDSMS/MDSMS2/Text-Mining_Web-Mining/Projet_Examen/sentiment_allocine/models/transformers/transformer_registry.json"
+  }
+}
