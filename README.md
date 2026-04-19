@@ -114,7 +114,7 @@ Le dataset utilisé est [Allociné](https://huggingface.co/datasets/allocine) (H
 ## Structure des dossiers
 
 ## Structure des dossiers du projet
-
+```
 sentiment-allocine-nlp/
 ├── app/
 │   ├── streamlit_app.py      # Interface Streamlit (application déployée)
@@ -144,7 +144,7 @@ sentiment-allocine-nlp/
 ├── requirements.txt          # Dépendances du projet
 ├── deployment_config.json    # Stratégie multi-modèles pour le déploiement
 └── README.md                 # Documentation principale
-
+```
 
 
 ## Application
