@@ -32,6 +32,58 @@ cat > README.md << 'READMEEOF'
 </div>
 
 --- 
+## Architecture du pipeline
+
+1. **Données**
+   - Corpus Allociné (160 000 critiques en français).
+   - Chargement via HuggingFace Datasets.
+
+2. **Prétraitement**
+   - Nettoyage des textes (ponctuation, accents, stopwords).
+   - Tokenisation pour les modèles Transformers.
+   - Vectorisation TF‑IDF pour les modèles classiques.
+
+3. **Modélisation**
+   - **Baselines** :
+     - Logistic Regression
+     - Naive Bayes
+     - LinearSVC (SVM linéaire)
+   - **Transformers** :
+     - CamemBERT fine‑tuné
+     - DistilCamemBERT (optimisé CPU)
+
+4. **Optimisation**
+   - Recherche d’hyperparamètres avec Optuna.
+   - Calibration des probabilités.
+   - Ajustement du seuil de décision selon le critère métier (FN ×3, FP ×1).
+
+5. **Évaluation**
+   - Comparaison explicite des modèles (Accuracy, F1, ROC AUC).
+   - Analyse des cas difficiles (sarcasme, négations).
+
+6. **Déploiement**
+   - Application Streamlit interactive.
+   - Choix du modèle (rapide vs premium).
+   - Visualisation des prédictions, probabilités et latence.
+   - Hébergement sur Streamlit Cloud.
+
+---
+
+### Schéma simplifié
+
+Données (Allociné, 160k critiques FR)  
+↓  
+Prétraitement (nettoyage, TF‑IDF / tokenisation)  
+↓  
+┌───────────────────────────┬─────────────────────────┐  
+│ Baselines (LR, SVM, NB)   │ Transformers (CamemBERT) │  
+└───────────────────────────┴─────────────────────────┘  
+↓  
+Optimisation (Optuna, seuil métier)  
+↓  
+Évaluation comparative  
+↓  
+Déploiement Streamlit (multi‑modèles)
 
 ## Vue d'ensemble
 
