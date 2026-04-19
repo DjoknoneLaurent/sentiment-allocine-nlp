@@ -16,13 +16,13 @@ Nous avons conçu un pipeline complet allant de l’exploration des données à 
 - Conteneurisation : Docker
 - CI/CD : GitHub Actions
 - Tests : pytest + pytest-cov
+**→ [Tester l'application](https://sentiment-allocine-nlp-8m5az5jann2bq53nxo9gms.streamlit.app/)**
 
 
 APP_URL="[https://sentiment-allocine.streamlit.app](https://sentiment-allocine-nlp-8m5az5jann2bq53nxo9gms.streamlit.app/)"
 
 GITHUB_URL="https://github.com/DjoknoneLaurent/sentiment-allocine-nlp"
 
-cat > README.md << 'READMEEOF'
 <div align="center">
 
 # Analyse de Sentiment — Critiques Allociné
@@ -164,7 +164,7 @@ L'interface Streamlit permet de :
 - visualiser la prédiction, les probabilités et le niveau de confiance
 - voir le seuil de décision appliqué et le temps de réponse
 
-**→ [Tester l'application](APP_URL_PLACEHOLDER)**
+
 
 ---
 
