@@ -17,8 +17,9 @@ Nous avons conçu un pipeline complet allant de l’exploration des données à 
 - CI/CD : GitHub Actions
 - Tests : pytest + pytest-cov
 
-# Remplacer l'URL par la tienne après déploiement
+
 APP_URL="[https://sentiment-allocine.streamlit.app](https://sentiment-allocine-nlp-8m5az5jann2bq53nxo9gms.streamlit.app/)"
+
 GITHUB_URL="https://github.com/DjoknoneLaurent/sentiment-allocine-nlp"
 
 cat > README.md << 'READMEEOF'
