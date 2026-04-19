@@ -1,7 +1,14 @@
 [# 🇫🇷 Sentiment Analysis – Allociné (French)
 
-Classification binaire de critiques de films (positif/négatif) avec pipeline MLOps complète.
+---
 
+## Vue d'ensemble
+
+Ce projet, réalisé par **DJOKNONE Laurent** et **EKWANE Franck**, étudiants en Master 2 Data Science et Modélisation Statistique (ISSEA-CEMAC), dans le cadre du cours **Text Mining & Web Mining** dirigé par le Professeur **Melatagia**, vise à analyser les sentiments exprimés dans les critiques de films françaises issues du corpus **Allociné**.
+
+Nous avons conçu un pipeline complet allant de l’exploration des données à la mise en production d’une application web interactive.
+
+---
 ## Stack technique
 - NLP : CamemBERT, FlauBERT, DistilBERT
 - API : FastAPI
@@ -172,32 +179,6 @@ L'interface Streamlit permet de :
 | Déploiement | Streamlit Community Cloud |
 | Versioning | Git / GitHub |
 
----
-
-## Structure du projet
-sentiment_allocine/
-├── app/
-│   ├── streamlit_app.py      # Interface utilisateur
-│   ├── model_manager.py      # Abstraction multi-modèles + fallback
-│   └── utils.py              # Preprocessing et utilitaires
-├── notebooks/
-│   ├── 01_eda_exploration.ipynb
-│   ├── 02_preprocessing_pipeline.ipynb
-│   ├── 03_baseline_models.ipynb
-│   ├── 04_transformer_finetuning.ipynb
-│   └── 05_evaluation_analysis.ipynb
-├── models/
-│   ├── baseline/             # LinearSVC sauvegardé
-│   └── transformers/         # Config et seuils CamemBERT
-├── reports/
-│   ├── figures/              # Visualisations EDA et benchmark
-│   └── metrics/              # Métriques JSON et CSV
-├── src/
-│   └── data/                 # Scripts de chargement et preprocessing
-├── deployment_config.json    # Stratégie multi-modèles
-└── requirements.txt
-
----
 
 ## Lancer en local
 
