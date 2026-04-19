@@ -11,7 +11,7 @@ Classification binaire de critiques de films (positif/négatif) avec pipeline ML
 - Tests : pytest + pytest-cov
 
 # Remplacer l'URL par la tienne après déploiement
-APP_URL="https://sentiment-allocine.streamlit.app"
+APP_URL="[https://sentiment-allocine.streamlit.app](https://sentiment-allocine-nlp-8m5az5jann2bq53nxo9gms.streamlit.app/)"
 GITHUB_URL="https://github.com/TON_USERNAME/sentiment-allocine-nlp"
 
 cat > README.md << 'READMEEOF'
