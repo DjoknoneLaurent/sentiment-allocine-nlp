@@ -1,7 +1,6 @@
 [# 🇫🇷 Sentiment Analysis – Allociné (French)
 
 ---
-
 ## Vue d'ensemble
 
 Ce projet, réalisé par **DJOKNONE Laurent** et **EKWANE Franck**, étudiants en Master 2 Data Science et Modélisation Statistique (ISSEA-CEMAC), dans le cadre du cours **Text Mining & Web Mining** dirigé par le Professeur **Melatagia**, vise à analyser les sentiments exprimés dans les critiques de films françaises issues du corpus **Allociné**.
