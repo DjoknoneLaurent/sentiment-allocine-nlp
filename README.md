@@ -111,28 +111,39 @@ Le dataset utilisé est [Allociné](https://huggingface.co/datasets/allocine) (H
 
 
 
-## Architecture
-sentiment_allocine/
+## Structure des dossiers
+
+## Structure des dossiers du projet
+
+sentiment-allocine-nlp/
 ├── app/
-│   ├── streamlit_app.py      # Interface utilisateur
-│   ├── model_manager.py      # Abstraction multi-modèles + fallback
-│   └── utils.py              # Preprocessing et utilitaires
+│   ├── streamlit_app.py      # Interface Streamlit (application déployée)
+│   ├── model_manager.py      # Gestion multi-modèles et fallback
+│   └── utils.py              # Fonctions de preprocessing et utilitaires
+│
 ├── notebooks/
-│   ├── 01_eda_exploration.ipynb
-│   ├── 02_preprocessing_pipeline.ipynb
-│   ├── 03_baseline_models.ipynb
-│   ├── 04_transformer_finetuning.ipynb
-│   └── 05_evaluation_analysis.ipynb
+│   ├── 01_eda_exploration.ipynb        # Analyse exploratoire des données
+│   ├── 02_preprocessing_pipeline.ipynb # Pipeline de nettoyage et vectorisation
+│   ├── 03_baseline_models.ipynb        # Modèles classiques (LR, SVM, NB)
+│   ├── 04_transformer_finetuning.ipynb # Fine-tuning CamemBERT / DistilCamemBERT
+│   └── 05_evaluation_analysis.ipynb    # Comparaison et analyse des résultats
+│
 ├── models/
-│   ├── baseline/             # LinearSVC sauvegardé
-│   └── transformers/         # Config et seuils CamemBERT
+│   ├── baseline/             # Sauvegarde des modèles classiques (LinearSVC, LR, NB)
+│   └── transformers/         # Configurations et checkpoints CamemBERT
+│
 ├── reports/
-│   ├── figures/              # Visualisations EDA et benchmark
-│   └── metrics/              # Métriques JSON et CSV
+│   ├── figures/              # Visualisations (EDA, benchmarks, métriques)
+│   └── metrics/              # Résultats chiffrés (JSON, CSV)
+│
 ├── src/
-│   └── data/                 # Scripts de chargement et preprocessing
-├── deployment_config.json    # Stratégie multi-modèles
-└── requirements.txt
+│   ├── data/                 # Scripts de téléchargement et preprocessing du corpus
+│   └── training/             # Scripts d’entraînement et d’évaluation
+│
+├── .github/workflows/        # CI/CD (tests automatiques et intégration continue)
+├── requirements.txt          # Dépendances du projet
+├── deployment_config.json    # Stratégie multi-modèles pour le déploiement
+└── README.md                 # Documentation principale
 
 
 
