@@ -93,12 +93,6 @@ Le dataset utilisé est [Allociné](https://huggingface.co/datasets/allocine) (H
 
 ---
 
-## Objectif métier
-
-La tâche n'est pas uniquement de maximiser l'accuracy. Un **critère de coût asymétrique** est intégré :
-coût = 3 × FN + 1 × FP
-
-Manquer un avis positif (faux négatif) est trois fois plus coûteux que signaler un faux positif. Ce critère guide l'optimisation du seuil de décision sur le jeu de validation — le seuil final n'est jamais 0.5 par défaut.
 
 ---
 
@@ -115,7 +109,7 @@ Manquer un avis positif (faux négatif) est trois fois plus coûteux que signale
 
 **Enseignement clé** : LinearSVC et CamemBERT sont statistiquement équivalents sur ce corpus. La valeur de CamemBERT se manifeste sur des formulations complexes (sarcasme, négations imbriquées), pas sur des critiques fortement polarisées.
 
----
+
 
 ## Architecture
 sentiment_allocine/
@@ -140,7 +134,7 @@ sentiment_allocine/
 ├── deployment_config.json    # Stratégie multi-modèles
 └── requirements.txt
 
----
+
 
 ## Application
 
