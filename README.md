@@ -394,7 +394,7 @@ La vraie valeur ajoutée de ce projet réside dans l'ensemble du pipeline : opti
 <div align="center">
 
 **DJOKNONE Laurent · EKWANE Franck**
-Master 2 Data Science — Modélisation Statistique | 2025
+Master 2 Data Science — Modélisation Statistique | 2026
 
 [Application](https://sentiment-allocine-nlp-8m5az5jann2bq53nxo9gms.streamlit.app/) · [GitHub](https://github.com/DjoknoneLaurent/sentiment-allocine-nlp)
 
